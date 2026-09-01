@@ -51,7 +51,7 @@ export default async function CategoryPage({ params }) {
           {posts.map((post) => (
             <Link
               key={post.slug}
-              href={`/blog/${post.slug}`}
+              href={`/blog/${encodeURIComponent(post.slug)}`}
               className="group block p-6 rounded-2xl border border-[var(--nav-border)] bg-[var(--nav-bg)] hover:border-[var(--primary)] hover:shadow-lg transition-all duration-300"
             >
               <h2 className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors">

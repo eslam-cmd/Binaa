@@ -24,6 +24,8 @@ export async function getAllPosts() {
 // جلب مقالة واحدة عن طريق الـ slug
 export async function getPostBySlug(slug) {
   try {
+    const normalizedSlug = String(slug || "").trim();
+    const decodedSlug = decodeURIComponent(normalizedSlug);
     const res = await fetch(`${API_URL}/posts`, {
       next: { revalidate: 60 },
     });
@@ -34,7 +36,11 @@ export async function getPostBySlug(slug) {
 
     const data = await res.json();
     const posts = Array.isArray(data.posts) ? data.posts : [];
-    return posts.find((post) => post.slug === slug) || null;
+    return (
+      posts.find(
+        (post) => String(post.slug || "").trim() === decodedSlug.trim(),
+      ) || null
+    );
   } catch (error) {
     console.error("خطأ في جلب المقالة:", error);
     return null;

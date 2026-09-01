@@ -110,7 +110,7 @@ export default async function BlogPage() {
               {featuredPosts.map((post, index) => (
                 <Link
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${encodeURIComponent(post.slug)}`}
                   className={`group relative overflow-hidden rounded-2xl border border-[var(--nav-border)] bg-[var(--nav-bg)] p-6 hover:border-[var(--primary)] hover:shadow-xl hover:shadow-[var(--primary)]/10 transition-all duration-500 ${
                     index === 0 ? "md:col-span-2" : ""
                   }`}
@@ -143,10 +143,7 @@ export default async function BlogPage() {
                             )
                           : "جديد"}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <FiClock size={13} />
-                        {post.reading_time || 3} د
-                      </span>
+
                       <span className="flex items-center gap-1.5 text-[var(--primary)]">
                         <FiArrowLeft size={13} />
                         <span className="text-[10px]">اقرأ</span>
@@ -232,7 +229,7 @@ export default async function BlogPage() {
               {posts.map((post, index) => (
                 <Link
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${encodeURIComponent(post.slug)}`}
                   className="group block p-5 rounded-2xl border border-[var(--nav-border)] bg-[var(--nav-bg)] hover:border-[var(--primary)] hover:shadow-xl hover:shadow-[var(--primary)]/5 transition-all duration-300 hover:scale-[1.01]"
                 >
                   <div className="flex flex-col sm:flex-row items-start gap-4">

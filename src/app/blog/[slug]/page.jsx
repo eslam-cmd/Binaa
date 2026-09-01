@@ -14,13 +14,14 @@ import {
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: String(post.slug || "").trim(),
   }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const decodedSlug = decodeURIComponent(slug);
+  const post = await getPostBySlug(decodedSlug);
   if (!post) return { title: "المقالة غير موجودة" };
 
   return {
@@ -31,7 +32,8 @@ export async function generateMetadata({ params }) {
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const decodedSlug = decodeURIComponent(slug);
+  const post = await getPostBySlug(decodedSlug);
 
   if (!post) {
     notFound();
