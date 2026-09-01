@@ -12,7 +12,8 @@ import {
   FiZap,
 } from "react-icons/fi";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://binaa-server.vercel.app/api";
 
 export default function Pricing() {
   const [plans, setPlans] = useState([]);

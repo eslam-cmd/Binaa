@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://binaa-server.vercel.app/api";
 
 function parseUserAgent(userAgent) {
   const browserMap = {

@@ -14,7 +14,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import { SiTelegram } from "react-icons/si";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://binaa-server.vercel.app/api";
 
 const PROJECT_TYPES = [
   "MVP",
