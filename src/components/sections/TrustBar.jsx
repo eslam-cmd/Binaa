@@ -90,7 +90,7 @@ export default function TrustBar() {
     >
       <div className="max-w-5xl mx-auto px-5 sm:px-8 py-10">
         {/* الأرقام */}
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
+        {/* <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
           {STATS.map((stat) => (
             <div key={stat.label} className="group transition-all duration-300">
               <p className="text-2xl sm:text-3xl font-bold text-[var(--foreground)] transition-colors duration-300">
@@ -101,11 +101,11 @@ export default function TrustBar() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* شعارات التقنيات */}
-        <div className="mt-10 pt-8 border-t border-[var(--nav-border)]">
-          <p className="text-center text-xs text-[var(--text-muted)] mb-5 transition-colors duration-300 font-medium tracking-wider uppercase">
+       
+          <p className="text-center text-xl text-[var(--text-muted)] mb-5 transition-colors duration-300 font-medium tracking-wider uppercase">
             🛠️ التقنيات التي أستخدمها
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
@@ -126,7 +126,7 @@ export default function TrustBar() {
               );
             })}
           </div>
-        </div>
+
       </div>
     </section>
   );

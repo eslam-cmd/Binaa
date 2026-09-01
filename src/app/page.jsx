@@ -8,7 +8,7 @@ import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
-import Testimonials from "@/components/sections/Testimonials";
+// import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       <Portfolio />
       <Pricing />
       <Process />
-       <Testimonials /> 
+      {/* <Testimonials />  */}
       <FAQ />
       <Contact />
       <Footer />
