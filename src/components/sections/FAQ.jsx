@@ -6,23 +6,39 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 const QUESTIONS = [
   {
     q: "كم يستغرق بناء SaaS كامل؟",
-    a: "حسب التعقيد، بين 3-8 أسابيع للـ MVP و8-16 أسبوع للـ SaaS الكامل.",
+    a: "حسب التعقيد، بين 3-8 أسابيع للـ MVP و8-16 أسبوع للـ SaaS الكامل. نقدم جدول زمني مفصل قبل البدء.",
   },
   {
-    q: "هل بتقدم دعم بعد التسليم؟",
-    a: "نعم، شهر دعم مجاني لإصلاح أي مشكلة + خيار صيانة شهرية.",
+    q: "هل بتقدموا دعم بعد التسليم؟",
+    a: "نعم، شهر دعم مجاني لإصلاح أي مشكلة + خيار صيانة شهرية بنسبة 10% من قيمة المشروع سنوياً.",
   },
   {
     q: "كيف بتم الدفع؟",
-    a: "50% مقدم و 50% بعد التسليم. عبر PayPal أو Wise أو التحويل البنكي.",
+    a: "50% مقدم و 50% بعد التسليم. عبر PayPal أو Wise أو التحويل البنكي. نوفر فواتير رسمية للشركات.",
   },
   {
-    q: "هل بتعمل مع الزبون المباشر ولا عبر منصة؟",
-    a: "الاثنين — خمسات، مستقل، أو تواصل مباشر.",
+    q: "شو التقنيات يلي بتستخدموها؟",
+    a: "Next.js 15, Express 5, PostgreSQL, Prisma, Redis, Docker, Google Gemini API، TypeScript، Tailwind CSS.",
   },
   {
-    q: "شو التقنيات يلي بتستخدمها؟",
-    a: "Next.js, Express, PostgreSQL, Prisma, Redis, Docker, Google Gemini API.",
+    q: "كم عدد التعديلات المسموحة؟",
+    a: "نقدم جولتين من التعديلات المجانية ضمن نطاق المشروع المتفق عليه. التعديلات الإضافية تحسب بساعات عمل إضافية.",
+  },
+  {
+    q: "هل توفرون استضافة للمشروع؟",
+    a: "نعم، نقدم خدمات استضافة على Vercel أو AWS أو خوادم مخصصة حسب احتياجك، مع إدارة كاملة للخادم.",
+  },
+  {
+    q: "ما هي ضمانات الجودة؟",
+    a: "نقدم ضماناً لمدة 30 يوماً بعد التسليم لإصلاح أي أخطاء برمجية. نوفر أيضاً تقارير اختبار شاملة للمشروع.",
+  },
+  {
+    q: "هل يمكن دمج الذكاء الاصطناعي في مشروعي؟",
+    a: "بالتأكيد! نوفر تكاملات مع Google Gemini، OpenAI، وخدمات AI أخرى لتحليل البيانات، توليد المحتوى، وتوصيات ذكية.",
+  },
+  {
+    q: "كم تكلفة تطوير تطبيق ويب؟",
+    a: "تبدأ الأسعار من $500 للـ MVP، وتصل إلى $3000+ للمشاريع الكاملة. نقدم عرض سعر مجاني بناءً على متطلباتك.",
   },
 ];
 
@@ -36,12 +52,18 @@ export default function FAQ() {
     >
       <div className="max-w-2xl mx-auto px-5 sm:px-8">
         <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 mb-4">
+            <span className="text-sm">❓</span>
+            <span className="text-xs font-medium text-[var(--primary)]">
+              الأسئلة الشائعة
+            </span>
+          </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[var(--foreground)] transition-colors duration-300">
             الأسئلة الشائعة
           </h2>
           <div className="w-12 h-0.5 bg-[var(--primary)] rounded-full mx-auto mt-2" />
           <p className="mt-3 text-sm text-[var(--text-muted)]">
-            أجوبة لأكثر الأسئلة اللي بتتكرر
+            أجوبة لأكثر الأسئلة اللي بتتكرر عن خدماتنا
           </p>
         </div>
 
@@ -60,9 +82,9 @@ export default function FAQ() {
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                   aria-expanded={isOpen}
-                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-right"
+                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-right group"
                 >
-                  <span className="text-sm sm:text-base font-medium text-[var(--foreground)] transition-colors duration-200">
+                  <span className="text-sm sm:text-base font-medium text-[var(--foreground)] transition-colors duration-200 group-hover:text-[var(--primary)]">
                     {item.q}
                   </span>
                   <span
@@ -85,6 +107,19 @@ export default function FAQ() {
               </div>
             );
           })}
+        </div>
+
+        {/* دعوة للتواصل */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-[var(--text-muted)]">
+            لم تجد إجابة لسؤالك؟{" "}
+            <a
+              href="#contact"
+              className="text-[var(--primary)] hover:text-[var(--primary-hover)] transition-colors font-medium"
+            >
+              تواصل معنا مباشرة
+            </a>
+          </p>
         </div>
       </div>
     </section>

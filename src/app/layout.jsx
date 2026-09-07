@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata = {
   title: "Islam Hadaya | Full-Stack Developer",
   description:
-    "مطور Full-Stack متخصص ببناء منصات SaaS وتطبيقات الويب باستخدام Next.js و NestJS/Express و PostgreSQL. من حلب، سوريا.",
+    "فريق Full-Stack متخصص ببناء منصات SaaS وتطبيقات الويب باستخدام Next.js و NestJS/Express و PostgreSQL. من حلب، سوريا.",
 };
 
 export default function RootLayout({ children }) {

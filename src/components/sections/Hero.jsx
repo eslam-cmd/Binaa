@@ -37,7 +37,6 @@ export default function Hero() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // تتبع حركة الماوس
     const handleMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
@@ -45,7 +44,6 @@ export default function Hero() {
     };
     window.addEventListener("mousemove", handleMouseMove);
 
-    // إنشاء الجسيمات
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -61,12 +59,9 @@ export default function Hero() {
 
       update() {
         this.pulse += 0.02;
-
-        // حركة ناعمة مع نبض
         this.x += this.speedX + Math.sin(this.pulse) * 0.1;
         this.y += this.speedY + Math.cos(this.pulse) * 0.1;
 
-        // التأثير على الجسيمات القريبة من الماوس
         if (mouse.x !== null && mouse.y !== null) {
           const dx = this.x - mouse.x;
           const dy = this.y - mouse.y;
@@ -89,7 +84,6 @@ export default function Hero() {
         const color = isDark ? "212, 175, 55" : "24, 110, 150";
         const glow = isDark ? "212, 175, 55" : "24, 110, 150";
 
-        // توهج خارجي
         const gradient = ctx.createRadialGradient(
           this.x,
           this.y,
@@ -105,7 +99,6 @@ export default function Hero() {
         ctx.arc(this.x, this.y, this.size * 4, 0, Math.PI * 2);
         ctx.fill();
 
-        // الجسيم الأساسي
         ctx.fillStyle = `rgba(${color}, ${this.opacity})`;
         ctx.shadowColor = `rgba(${color}, ${this.opacity * 0.5})`;
         ctx.shadowBlur = 10;
@@ -116,7 +109,6 @@ export default function Hero() {
       }
     }
 
-    // إنشاء الجسيمات
     const particleCount = Math.min(
       80,
       Math.floor((canvas.width * canvas.height) / 12000),
@@ -125,7 +117,6 @@ export default function Hero() {
       particles.push(new Particle());
     }
 
-    // رسم الخطوط
     function drawLines() {
       const isDark = document.documentElement.className === "dark";
       const color = isDark ? "212, 175, 55" : "24, 110, 150";
@@ -152,7 +143,6 @@ export default function Hero() {
       }
     }
 
-    // رسم دوائر متحركة
     function drawCircles(time) {
       const isDark = document.documentElement.className === "dark";
       const color = isDark ? "212, 175, 55" : "24, 110, 150";
@@ -185,14 +175,12 @@ export default function Hero() {
 
     function animate(time) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       drawCircles(time);
       particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
       drawLines();
-
       animationId = requestAnimationFrame(animate);
     }
 
@@ -217,17 +205,14 @@ export default function Hero() {
       id="hero"
       className="relative w-full min-h-screen pt-20 pb-24 sm:pt-28 sm:pb-32 bg-[var(--background)] transition-colors duration-300 overflow-hidden flex items-center"
     >
-      {/* خلفية الكانفاس */}
       <div className="absolute inset-0 w-full h-full">
         <canvas ref={canvasRef} className="w-full h-full" />
       </div>
 
-      {/* تأثير توهج إضافي */}
       <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent pointer-events-none" />
 
-      {/* محتوى الهيرو */}
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center">
-        {/* شارة احترافية */}
+        {/* شارة */}
         <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/5 backdrop-blur-sm text-xs font-medium text-[var(--primary)] tracking-wider uppercase mb-6 transition-all duration-300 hover:bg-[var(--primary)]/10 hover:scale-105 cursor-default">
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--primary)] opacity-75" />
@@ -237,9 +222,9 @@ export default function Hero() {
           <FaStar className="text-[10px] opacity-50" />
         </div>
 
-        {/* العنوان الرئيسي */}
+        {/* العنوان */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[var(--foreground)] leading-[1.1] tracking-tight transition-colors duration-300">
-          أبني لك
+          نبني لك
           <span className="relative block text-[var(--primary)] mt-1">
             منتجك الرقمي
             <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent opacity-30" />
@@ -251,7 +236,7 @@ export default function Hero() {
 
         {/* الوصف */}
         <p className="mt-6 text-sm sm:text-base lg:text-lg text-[var(--text-muted)] leading-relaxed max-w-2xl mx-auto transition-colors duration-300">
-          مطور{" "}
+          فريق{" "}
           <span className="text-[var(--primary)] font-semibold">
             Full-Stack
           </span>{" "}
@@ -269,18 +254,12 @@ export default function Hero() {
             {" "}
             Express
           </span>{" "}
-          و
+          مع قواعد بيانات
           <span className="text-[var(--primary)] font-semibold">
             {" "}
             PostgreSQL
           </span>
-          .
-          <br />
-          من{" "}
-          <span className="text-[var(--primary)] font-semibold">
-            حلب، سوريا
-          </span>{" "}
-          🇸🇾
+          . نقدم حلولاً سريعة وآمنة لتلبية احتياجاتك الرقمية.
         </p>
 
         {/* الأزرار */}
@@ -308,12 +287,12 @@ export default function Hero() {
             <FaCode
               className={`transition-transform duration-300 ${hoveredBtn === "secondary" ? "rotate-6" : ""}`}
             />
-            استعرض أعمالي
+            استعرض أعمالنا
           </a>
         </div>
 
-        {/* الإحصائيات المحسنة */}
-        <div className="mt-12 pt-8 border-t border-[var(--nav-border)] grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto transition-colors duration-300">
+        {/* الإحصائيات */}
+        <div className="mt-12 pt-8 border-t border-[var(--nav-border)] grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto transition-colors duration-300">
           <div className="group flex flex-col items-center gap-1 p-4 rounded-xl hover:bg-[var(--primary)]/5 transition-all duration-300 cursor-default">
             <div className="flex items-center gap-2">
               <FaBriefcase className="text-[var(--primary)] text-lg" />
@@ -332,21 +311,12 @@ export default function Hero() {
               تقنية متقنة
             </p>
           </div>
-          <div className="group flex flex-col items-center gap-1 p-4 rounded-xl hover:bg-[var(--primary)]/5 transition-all duration-300 cursor-default">
-            <div className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-[var(--primary)] text-lg" />
-              <p className="text-2xl font-bold text-[var(--foreground)]">حلب</p>
-            </div>
-            <p className="text-[11px] text-[var(--text-muted)] font-medium uppercase tracking-wider">
-              سوريا 🇸🇾
-            </p>
-          </div>
         </div>
 
-        {/* أيقونات التقنيات السريعة */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 opacity-40">
+        {/* أيقونات التقنيات */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 opacity-60">
           <span className="text-[10px] text-[var(--text-muted)] font-medium tracking-wider uppercase">
-            تقنياتي:
+            التقنيات:
           </span>
           <span className="flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
             <FaServer className="text-[var(--primary)] text-sm" /> Next.js
@@ -355,7 +325,6 @@ export default function Hero() {
           <span className="flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
             <FaDatabase className="text-[var(--primary)] text-sm" /> PostgreSQL
           </span>
-       
           <span className="w-px h-4 bg-[var(--nav-border)]" />
           <span className="flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
             <FaShieldAlt className="text-[var(--primary)] text-sm" /> Secure

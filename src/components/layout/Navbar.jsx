@@ -5,8 +5,8 @@ import { useTheme } from "../ThemeProvider";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 
 const NAV_LINKS = [
-  { label: "خدماتي", href: "#services" },
-  { label: "أعمالي", href: "#portfolio" },
+  { label: "خدماتنا", href: "#services" },
+  { label: "أعمالنا", href: "#portfolio" },
   { label: "المدونة", href: "/blog" },
   { label: "الباقات", href: "#pricing" },
   { label: "الأسئلة الشائعة", href: "#faq" },
@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* الشعار + مؤشر التوفر */}
         <a href="#hero" className="flex items-center gap-2.5 shrink-0">
           <span className="font-bold text-[var(--foreground)] text-base transition-colors duration-300">
-            إسلام هدايا
+            Binaa Technology
           </span>
           <span className="hidden sm:flex items-center gap-1.5 text-[12px] text-[var(--text-muted)] border-r border-[var(--nav-border]) pr-2.5 mr-0.5 transition-colors duration-300">
             <span className="relative flex h-1.5 w-1.5">

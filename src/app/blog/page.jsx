@@ -80,7 +80,7 @@ export default async function BlogPage() {
               مقالات و<span className="text-[var(--primary)]">خبرات</span>
             </h1>
             <p className="mt-4 text-[var(--text-muted)] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              أشارك معك رحلتي في عالم البرمجة، أحدث التقنيات، ونصائح عملية من
+              نشارككم رحلتنا في عالم البرمجة، أحدث التقنيات، ونصائح عملية من
               واقع التجربة
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-[var(--text-muted)]">

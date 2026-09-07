@@ -7,19 +7,12 @@ import {
   FiAperture,
   FiRocket,
   FiCheckCircle,
-  FiArrowRight,
+  FiArrowLeft,
   FiSend,
   FiMonitor,
   FiCheckSquare,
   FiPackage,
 } from "react-icons/fi";
-
-// بدائل FiRocket:
-// - FiRocket (موجود) ✅
-// - FiSend (للإرسال)
-// - FiMonitor (للشاشة)
-// - FiCheckSquare (للتحقق)
-// - FiPackage (للتسليم)
 
 const STEPS = [
   {
@@ -34,7 +27,7 @@ const STEPS = [
   },
   {
     title: "تطوير",
-    description: "أبني المشروع بتحديثات أسبوعية",
+    description: "نبني المشروع بتحديثات أسبوعية",
     icon: FiCode,
     color: "text-blue-400",
     bg: "bg-blue-400/10",
@@ -44,8 +37,8 @@ const STEPS = [
   },
   {
     title: "اختبار",
-    description: "أتأكد إن كل شي شغال 100%",
-    icon: FiCheckSquare, // بدلاً من FiAperture
+    description: "نتأكد إن كل شي شغال 100%",
+    icon: FiCheckSquare,
     color: "text-purple-400",
     bg: "bg-purple-400/10",
     border: "border-purple-400/20",
@@ -54,8 +47,8 @@ const STEPS = [
   },
   {
     title: "تسليم",
-    description: "أنقل المشروع لإلك + دعم شهر مجاني",
-    icon: FiPackage, // بدلاً من FiRocket (أو استخدم FiRocket إذا كان موجود)
+    description: "نسلمك المشروع + دعم شهر مجاني",
+    icon: FiPackage,
     color: "text-orange-400",
     bg: "bg-orange-400/10",
     border: "border-orange-400/20",
@@ -115,7 +108,7 @@ export default function Process() {
         <div className="relative mb-10 hidden sm:block">
           <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-[var(--nav-border)] -translate-y-1/2" />
           <div
-            className="absolute top-1/2 left-0 h-0.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] -translate-y-1/2 transition-all duration-1000"
+            className="absolute top-1/2 left-0 h-0.5 bg-gradient-to-l from-[var(--primary)] to-[var(--accent)] -translate-y-1/2 transition-all duration-1000"
             style={{ width: isInView ? "100%" : "0%" }}
           />
           <div className="relative flex justify-between">
@@ -200,17 +193,17 @@ export default function Process() {
                 {/* مؤشر التقدم */}
                 <div className="mt-4 w-full h-1 bg-[var(--nav-border)] rounded-full overflow-hidden">
                   <div
-                    className={`h-full bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-full transition-all duration-1000 ${
+                    className={`h-full bg-gradient-to-l from-[var(--primary)] to-[var(--accent)] rounded-full transition-all duration-1000 ${
                       isActive ? "w-full" : "w-0"
                     }`}
                     style={{ width: isActive ? step.progress : "0%" }}
                   />
                 </div>
 
-                {/* سهم ارتباط */}
+                {/* سهم ارتباط - من اليمين لليسار */}
                 {index < STEPS.length - 1 && (
                   <div className="hidden sm:block absolute -right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                    <FiArrowRight size={20} />
+                    <FiArrowLeft size={20} />
                   </div>
                 )}
               </div>

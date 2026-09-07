@@ -17,6 +17,7 @@ import {
   FaArrowRight,
   FaLaptopCode,
   FaBuilding,
+  FaFacebook,
 } from "react-icons/fa";
 
 const LINKS = [
@@ -32,6 +33,11 @@ const LINKS = [
   },
   { label: "GitHub", href: SITE.github, icon: FiGithub },
   { label: "LinkedIn", href: SITE.linkedin, icon: FiLinkedin },
+  { 
+    label: "Facebook", 
+    href: "https://www.facebook.com/profile.php?id=61594218961084", 
+    icon: FaFacebook 
+  },
 ];
 
 export default function Footer() {
@@ -46,68 +52,6 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
-        {/* صف دعوة مزدوجة: توظيف + فريلانسر */}
-        <div className="text-center mb-6 pb-6 border-b border-[var(--nav-border)]">
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-xs font-medium text-[var(--primary)]">
-              <FaBuilding size={12} />
-              للتوظيف
-            </span>
-            <span className="text-[var(--text-muted)] text-xs opacity-30">
-              |
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-xs font-medium text-[var(--primary)]">
-              <FaLaptopCode size={12} />
-              فريلانسر
-            </span>
-          </div>
-
-          <p className="text-sm text-[var(--text-muted)] leading-relaxed">
-            🔍{" "}
-            <span className="text-[var(--foreground)] font-medium">
-              للتوظيف:
-            </span>{" "}
-            اطلع على سيرتي الذاتية
-            <br className="sm:hidden" />
-            <span className="text-[var(--text-muted)]"> | </span>
-            💼{" "}
-            <span className="text-[var(--foreground)] font-medium">
-              للفريلانسر:
-            </span>{" "}
-            احصل على خدمة احترافية
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-3">
-            {/* رابط الموقع الشخصي للتوظيف */}
-            <a
-              href="https://my-profile-personal-nextjs.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-[var(--primary)] text-[var(--background)] text-sm font-semibold hover:bg-[var(--primary-hover)] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary)]/30 group"
-            >
-              <FiFileText size={16} />
-              <span>السيرة الذاتية</span>
-              <FaArrowRight
-                size={12}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </a>
-
-            {/* رابط طلب خدمة فريلانسر */}
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-xl border border-[var(--nav-border)] text-[var(--text-muted)] text-sm font-medium hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)]/5"
-            >
-              <FiSend size={16} />
-              <span>اطلب خدمة</span>
-            </a>
-          </div>
-
-          <p className="text-[10px] text-[var(--text-muted)] opacity-50 mt-3">
-            🏢 للتوظيف • 💼 مشاريع فريلانسر • 🚀 تطوير ويب متكامل
-          </p>
-        </div>
-
         {/* الروابط والإشارات */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-5 flex-wrap justify-center">

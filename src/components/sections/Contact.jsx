@@ -14,7 +14,8 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import { SiTelegram } from "react-icons/si";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://binaa-server.vercel.app/api";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://binaa-server.vercel.app/api";
 
 const PROJECT_TYPES = [
   "MVP",
@@ -230,15 +231,15 @@ export default function Contact() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 mb-4">
             <FiMessageCircle className="text-[var(--primary)]" size={14} />
             <span className="text-xs font-medium text-[var(--primary)]">
-              تواصل معي الآن
+              تواصل معنا الآن
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[var(--foreground)] transition-colors duration-300">
-            خبرني عن مشروعك
+            أخبرنا عن مشروعك
           </h2>
           <div className="w-12 h-0.5 bg-[var(--primary)] rounded-full mx-auto mt-2" />
           <p className="mt-3 text-sm text-[var(--text-muted)]">
-            اترك لي رسالة وسأتواصل معك خلال 24 ساعة
+            اترك لنا رسالة وسنتواصل معك خلال 24 ساعة
           </p>
         </div>
 
@@ -482,7 +483,7 @@ export default function Contact() {
                 {whatsappNumber}
               </div>
               <p className="mt-1.5 text-[10px] text-[var(--text-muted)] leading-relaxed">
-                تواصل معي مباشرة للاستفسار عن المشروع قبل الشراء
+                تواصل معنا مباشرة للاستفسار عن المشروع قبل الشراء
               </p>
             </div>
 
@@ -524,7 +525,7 @@ export default function Contact() {
                 {email}
               </div>
               <p className="mt-1.5 text-[10px] text-[var(--text-muted)] leading-relaxed">
-                راسلني عبر البريد الإلكتروني للاستفسارات الرسمية
+                راسلنا عبر البريد الإلكتروني للاستفسارات الرسمية
               </p>
             </div>
 
@@ -534,11 +535,11 @@ export default function Contact() {
                 <span className="text-lg">💡</span>
                 <div>
                   <p className="text-xs font-medium text-[var(--foreground)] mb-0.5">
-                    استشرني قبل الشراء
+                    استشرنا قبل الشراء
                   </p>
                   <p className="text-[10px] text-[var(--text-muted)] leading-relaxed">
-                    تواصل معي لمناقشة متطلبات مشروعك بالتفصيل، وسأقدم لك استشارة
-                    مجانية حول أفضل الحلول التقنية التي تناسب احتياجاتك
+                    تواصل معنا لمناقشة متطلبات مشروعك بالتفصيل، وسنقدم لك
+                    استشارة مجانية حول أفضل الحلول التقنية التي تناسب احتياجاتك
                     وميزانيتك.
                   </p>
                 </div>

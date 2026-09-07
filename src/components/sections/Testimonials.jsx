@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     name: "أحمد محمد",
     role: "مؤسس شركة تقنية",
     content:
-      "عملت مع إسلام على تطوير منصة SaaS متكاملة، وكانت النتيجة فوق التوقعات. احترافية عالية والتزام بالمواعيد.",
+      "عملت مع فريقنا على تطوير منصة SaaS متكاملة، وكانت النتيجة فوق التوقعات. احترافية عالية والتزام بالمواعيد.",
     rating: 5,
     avatar:
       "https://ui-avatars.com/api/?name=أحمد+محمد&background=3b82f6&color=fff&size=60",
@@ -19,7 +19,7 @@ const TESTIMONIALS = [
     name: "سارة خالد",
     role: "مديرة مشاريع",
     content:
-      "أسلوب احترافي في التعامل، تواصل مستمر وتحديثات أسبوعية. أنصح بالتعامل معه لأي مشروع تقني.",
+      "أسلوب احترافي في التعامل، تواصل مستمر وتحديثات أسبوعية. أنصح بالتعامل معهم لأي مشروع تقني.",
     rating: 5,
     avatar:
       "https://ui-avatars.com/api/?name=سارة+خالد&background=10b981&color=fff&size=60",
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
     name: "محمد العلي",
     role: "صاحب مشروع ناشئ",
     content:
-      "ساعدني في إطلاق مشروعي في وقت قياسي. فهم احتياجاتي بدقة وقدم حلولاً مبتكرة.",
+      "ساعدني الفريق في إطلاق مشروعي في وقت قياسي. فهموا احتياجاتي بدقة وقدموا حلولاً مبتكرة.",
     rating: 5,
     avatar:
       "https://ui-avatars.com/api/?name=محمد+العلي&background=8b5cf6&color=fff&size=60",
@@ -39,7 +39,7 @@ const TESTIMONIALS = [
     name: "نورا إبراهيم",
     role: "مديرة تسويق",
     content:
-      "مطور محترف يفهم احتياجات العملاء. ساعدنا في تطوير منصة متكاملة بأحدث التقنيات.",
+      "فريق محترف يفهم احتياجات العملاء. ساعدنا في تطوير منصة متكاملة بأحدث التقنيات.",
     rating: 5,
     avatar:
       "https://ui-avatars.com/api/?name=نورا+إبراهيم&background=f59e0b&color=fff&size=60",
@@ -49,7 +49,7 @@ const TESTIMONIALS = [
     name: "خالد سليمان",
     role: "مدير تقني",
     content:
-      "عمل احترافي، كود نظيف ومنظم، وتواصل ممتاز طوال فترة المشروع. أوصي به بشدة.",
+      "عمل احترافي، كود نظيف ومنظم، وتواصل ممتاز طوال فترة المشروع. أوصي بهذا الفريق بشدة.",
     rating: 5,
     avatar:
       "https://ui-avatars.com/api/?name=خالد+سليمان&background=ef4444&color=fff&size=60",
@@ -108,11 +108,12 @@ export default function Testimonials() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">
-            ماذا يقولون <span className="text-[var(--primary)]">عن خدمتي</span>
+            ماذا يقولون{" "}
+            <span className="text-[var(--primary)]">عن خدماتنا</span>
           </h2>
           <div className="w-16 h-1 bg-[var(--primary)] rounded-full mx-auto mt-3" />
           <p className="mt-4 text-[var(--text-muted)] text-sm sm:text-base">
-            آراء حقيقية من عملاء سعداء بخدماتي
+            آراء حقيقية من عملاء سعداء بخدماتنا
           </p>
         </div>
 

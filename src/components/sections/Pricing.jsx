@@ -472,7 +472,7 @@ export default function Pricing() {
             💡 الأسعار ابتدائية وتعتمد على تعقيد المشروع والميزات الإضافية
           </p>
           <p className="text-xs text-[var(--text-muted)] mt-1">
-            📞 للاستفسارات، تواصل معي مباشرة عبر{" "}
+            📞 للاستفسارات، تواصل معنا مباشرة عبر{" "}
             <span className="text-[var(--primary)] font-medium">واتساب</span> أو{" "}
             <span className="text-[var(--primary)] font-medium">تلجرام</span>
           </p>
