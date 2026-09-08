@@ -1,6 +1,23 @@
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://binaa-server.vercel.app/api";
 
+export function normalizePostSlug(value) {
+  if (value === null || value === undefined) return "";
+
+  let slug = String(value).trim();
+
+  try {
+    const decoded = decodeURIComponent(slug);
+    if (decoded && decoded !== slug) {
+      slug = decoded;
+    }
+  } catch {
+    // إذا كان الـ slug لا يحتوي على ترميز URL، نترك القيمة كما هي
+  }
+
+  return slug.normalize("NFC").trim();
+}
+
 // جلب جميع المقالات من API
 export async function getAllPosts() {
   try {
@@ -14,7 +31,14 @@ export async function getAllPosts() {
     }
 
     const data = await res.json();
-    return Array.isArray(data.posts) ? data.posts : [];
+    if (!Array.isArray(data.posts)) {
+      return [];
+    }
+
+    return data.posts.map((post) => ({
+      ...post,
+      slug: normalizePostSlug(post.slug),
+    }));
   } catch (error) {
     console.error("خطأ في جلب المقالات:", error);
     return [];
@@ -24,8 +48,7 @@ export async function getAllPosts() {
 // جلب مقالة واحدة عن طريق الـ slug
 export async function getPostBySlug(slug) {
   try {
-    const normalizedSlug = String(slug || "").trim();
-    const decodedSlug = decodeURIComponent(normalizedSlug);
+    const normalizedSlug = normalizePostSlug(slug);
     const res = await fetch(`${API_URL}/posts`, {
       next: { revalidate: 60 },
     });
@@ -35,11 +58,16 @@ export async function getPostBySlug(slug) {
     }
 
     const data = await res.json();
-    const posts = Array.isArray(data.posts) ? data.posts : [];
+    const posts = Array.isArray(data.posts)
+      ? data.posts.map((post) => ({
+          ...post,
+          slug: normalizePostSlug(post.slug),
+        }))
+      : [];
+
     return (
-      posts.find(
-        (post) => String(post.slug || "").trim() === decodedSlug.trim(),
-      ) || null
+      posts.find((post) => normalizePostSlug(post.slug) === normalizedSlug) ||
+      null
     );
   } catch (error) {
     console.error("خطأ في جلب المقالة:", error);

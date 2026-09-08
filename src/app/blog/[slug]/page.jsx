@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, normalizePostSlug } from "@/lib/posts";
 import {
   FiArrowRight,
   FiClock,
@@ -20,8 +20,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const decodedSlug = decodeURIComponent(slug);
-  const post = await getPostBySlug(decodedSlug);
+  const normalizedSlug = normalizePostSlug(slug);
+  const post = await getPostBySlug(normalizedSlug);
   if (!post) return { title: "المقالة غير موجودة" };
 
   return {
@@ -32,8 +32,8 @@ export async function generateMetadata({ params }) {
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
-  const decodedSlug = decodeURIComponent(slug);
-  const post = await getPostBySlug(decodedSlug);
+  const normalizedSlug = normalizePostSlug(slug);
+  const post = await getPostBySlug(normalizedSlug);
 
   if (!post) {
     notFound();
