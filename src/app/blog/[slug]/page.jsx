@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
   if (!post) return { title: "المقالة غير موجودة" };
 
   return {
-    title: `${post.title} | إسلام هداية`,
+    title: `${post.title} | إسلام هدايا`,
     description: post.excerpt,
   };
 }
@@ -76,10 +76,6 @@ export default async function PostPage({ params }) {
             <span className="flex items-center gap-1.5">
               <FiCalendar size={16} />
               {new Date(post.date).toLocaleDateString("ar-EG")}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <FiClock size={16} />
-              {post.readingTime} دقائق قراءة
             </span>
             <span className="flex items-center gap-1.5">
               <FiUser size={16} />
